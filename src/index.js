@@ -52,14 +52,19 @@
 // 21.   How have other people solved this problem?
 
 function getPermutations(array) {
-  let newArr = [];
-  let newPerm = [];
+  let perms = [];
   // write helper function with arr, perm and perms
   // concat all the newly created perm arrays into 1 big array perms
-  function helper(array, perm, perms) {
-    if (array === []) {
+  helper(array, [], perms) {
+    return perms;
+  }
+
+  function helper(array, perm, perms){
+    if !(array.length) {
       perms.append(perm);
     }
+    
+  }
     for (let num in array) {
       // for (let num in arr), add into newArr from the removed array
       let removedVal = array.pop(array[num]);
