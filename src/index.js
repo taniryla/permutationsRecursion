@@ -65,6 +65,8 @@ function getPermutations(array) {
     } else {
       for (let i = 0; i < array.length; i++){
         let newArr = array.slice(0, i).concat(array.slice(i + 1); 
+        let newPerm = perm + array[i];
+        helper(newArr, newPerm, perms);
       }
     }
     
