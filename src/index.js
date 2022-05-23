@@ -60,8 +60,12 @@ function getPermutations(array) {
   }
 
   function helper(array, perm, perms){
-    if !(array.length) {
+    if (!array.length && perm.length) {
       perms.append(perm);
+    } else {
+      for (let i = 0; i < array.length; i++){
+        let newArr = array.slice(0, i).concat(array.slice(i + 1); 
+      }
     }
     
   }
