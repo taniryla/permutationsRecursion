@@ -49,27 +49,49 @@
 // 18.  Can you see it at a glance?
 // 19.  Can you make the code DRYer and refactor?
 // 20.  Can you improve the performance?
-// 3 pointers in place and swapping 
+// 3 pointers in place and swapping
 
 // 21.   How have other people solved this problem?
 
+// function getPermutations(array) {
+//   let perms = [];
+//   // write helper function with arr, perm and perms
+//   // concat all the newly created perm arrays into 1 big array perms
+//   helper(array, [], perms) {
+//     return perms;
+//   }
+
+//   function helper(array, perm, perms){
+//     if (!array.length && perm.length) {
+//       perms.append(perm);
+//     } else {
+//       for (let i = 0; i < array.length; i++){
+//         let newArr = array.slice(0, i).concat(array.slice(i + 1);
+//         let newPerm = perm + array[i];
+//         helper(newArr, newPerm, perms);
+//       }
+//     }
+//   }
+
 function getPermutations(array) {
   let perms = [];
-  // write helper function with arr, perm and perms
-  // concat all the newly created perm arrays into 1 big array perms
-  helper(array, [], perms) {
-    return perms;
-  }
+  helper(0, array, perms);
+  return perms;
+}
 
-  function helper(array, perm, perms){
-    if (!array.length && perm.length) {
-      perms.append(perm);
-    } else {
-      for (let i = 0; i < array.length; i++){
-        let newArr = array.slice(0, i).concat(array.slice(i + 1); 
-        let newPerm = perm + array[i];
-        helper(newArr, newPerm, perms);
-      }
+function helper(i, array, perms) {
+  if (i === array.length - 1) {
+    perms.push(array.slice());
+  } else {
+    for (let j = i; j < array.length; j++) {
+      swap(i, j, array);
+      helper(i + 1, array, perms);
+      swap(i, j, array);
     }
   }
-    
+}
+
+function swap(i, j, array) {
+  array[i] = array[j];
+  array[j] = temp;
+}
