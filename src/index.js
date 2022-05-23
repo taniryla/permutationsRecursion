@@ -49,6 +49,8 @@
 // 18.  Can you see it at a glance?
 // 19.  Can you make the code DRYer and refactor?
 // 20.  Can you improve the performance?
+// 3 pointers in place and swapping 
+
 // 21.   How have other people solved this problem?
 
 function getPermutations(array) {
