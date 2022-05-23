@@ -69,14 +69,5 @@ function getPermutations(array) {
         helper(newArr, newPerm, perms);
       }
     }
+  }
     
-  }
-    for (let num in array) {
-      // for (let num in arr), add into newArr from the removed array
-      let removedVal = array.pop(array[num]);
-      newArr = removedVal;
-      newPerm = perm + num;
-      helper(newArr, newPerm, perms);
-    }
-  }
-}
