@@ -92,6 +92,7 @@ function helper(i, array, perms) {
 }
 
 function swap(i, j, array) {
+  const temp = array[i];
   array[i] = array[j];
   array[j] = temp;
 }
