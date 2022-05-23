@@ -51,4 +51,17 @@
 // 20.  Can you improve the performance?
 // 21.   How have other people solved this problem?
 
-function getPermutations(arr) {}
+function getPermutations(array) {
+  let newArr = []
+
+  for (let idx of array){
+    if (array[idx] !== newArr[idx]){
+      newArr.push(arr[idx + 1]);
+    } else {
+      let result += getPermutations(newArr);
+    }
+  }
+  // base case is when there are no permutations remaining
+  
+  return result;
+}
